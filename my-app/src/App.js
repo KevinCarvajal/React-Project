@@ -2,20 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import StartPage from './views/StartPage'
-
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div className="App">
-          {/* <Header /> */}
+          <Header />
           <main>
             <Switch>
               <Route exact path="/" component={StartPage} />
             </Switch>
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     )
