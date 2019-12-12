@@ -9,7 +9,8 @@
 @import "./basic-styles";
 
 // Components Styling
-@import "../components/Header/styles.scss";
+@import "../components/Header/styles";
+@import "../components/FormBuild/styles";
 
 // Views Styling
 @import "../views/StartPage/styles";

@@ -1,10 +1,10 @@
 import React from "react";
-import Form from "../../components/Form";
+import FormBuild from "../../components/FormBuild";
 
 const FormPage = () => {
   return (
     <div>
-      <Form />
+      <FormBuild />
     </div>
   );
 };
