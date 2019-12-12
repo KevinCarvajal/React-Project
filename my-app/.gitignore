@@ -11,6 +11,9 @@
 # production
 /build
 
+# Optional npm cache directory
+.npm
+
 # misc
 .DS_Store
 .env.local

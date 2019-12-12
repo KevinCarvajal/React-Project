@@ -1,4 +1,23 @@
-@import './bootstrap-overrides.scss';
-@import '../../node_modules/bootstrap/scss/functions';
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/mixins/'
+.App {
+  --textColor: #333;
+  --background: #eee;
+  --primary: #07575b;
+  --headerBackground: #003b46;
+}
+.dark-mode {
+  --textColor: #eee;
+  --background: #393e46;
+  --primary: #4ecca3;
+  --headerBackground: #232931;
+}
+
+.App {
+  color: var(--textColor);
+  background-color: var(--background);
+  h1 {
+    color: var(--textColor);
+    background-color: var(--background);
+  }
+}
+
+$vh: calc(var(--vh, 1vh) * 100);
