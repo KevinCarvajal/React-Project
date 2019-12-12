@@ -6,16 +6,21 @@ const FormBuild = () => {
   const [nameValue, setNameValue] = useState("");
   const [phoneValue, setPhoneValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
-  const [errorMessage] = useState("doesnt work");
+
+  //error messages
+  const [errorPhone] = useState("Phone doesnt work");
+  const [errorName] = useState("Name doesnt work");
+  const [errorEmail] = useState("Email doesnt work");
 
   const [validation, setvalidation] = useState({
+    //Values
     nameValue: true,
     phoneValue: true,
-    emailValue: true
-  });
-
-  const [error] = useState({
-    errorMessage: true
+    emailValue: true,
+    //Errors
+    errorName: false,
+    errorPhone: false,
+    errorEmail: false
   });
 
   //Send forms input values
@@ -25,42 +30,52 @@ const FormBuild = () => {
     //validation for the forms input values
     const validate = () => {
       let x = { ...validation };
-      let t = { ...error };
+      //Validation Name
       if (nameValue === "" || nameValue.length < 3) {
         x.nameValue = false;
+        console.log(errorName);
       } else {
         x.nameValue = true;
       }
+
+      //Validation Phone
       if (
         phoneValue === "" ||
         phoneValue.length < 10 ||
         !/^0[7][0-9]{8}$/.test(phoneValue)
       ) {
         x.phoneValue = false;
+        console.log(errorPhone);
       } else {
         x.phoneValue = true;
       }
+
+      //Validation Email
       if (
         emailValue === "" ||
         emailValue.length < 4 ||
         !/\w\w+@\w\w+\.\w\w+/.test(emailValue)
       ) {
         x.emailValue = false;
+        console.log(errorEmail);
       } else {
         x.emailValue = true;
       }
-      setvalidation(x);
-      if (x.nameValue && x.phoneValue && x.emailValue) return true;
-      else {
-        t.errorMessage = false;
-        console.log(errorMessage);
 
+      //If validation is true or false do this
+      setvalidation(x);
+      if (x.nameValue && x.phoneValue && x.emailValue) {
+        console.log("works!");
+        return true;
+      } else {
         return false;
       }
     };
+
+    //if validation works do this
     if (validate()) {
       console.log(
-        "Name:" + nameValue + "\n",
+        " Name:" + nameValue + "\n",
         "Phone:" + phoneValue + "\n",
         "Email:" + emailValue + "\n"
       );
